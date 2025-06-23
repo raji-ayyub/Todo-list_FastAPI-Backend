@@ -9,7 +9,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import uvicorn
-
+import certifi
 from src.dal import ToDoDAL, ListSummary, ToDoList
 
 load_dotenv()
@@ -20,7 +20,7 @@ DEBUG = os.environ.get("DEBUG", "").strip().lower() in {"1", "true", "on", "yes"
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    client = AsyncIOMotorClient(MONGODB_URI)
+    client = AsyncIOMotorClient(MONGODB_URI, tlsCAFile=certifi.where())
     database = client.get_default_database()
     pong = await database.command("ping")
     if int(pong["ok"]) != 1:
