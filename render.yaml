@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: todo-backend
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn src.server:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://cozmi:rajtrosoft@rajtrosoft.wurmf40.mongodb.net/cms?retryWrites=true&w=majority&appName=rajtrosoft
+      - key: DEBUG
+        value: "false"

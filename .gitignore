@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+*.sw?
+
+# Environment variables
+.env
+.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.orig
+*.old
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+*.spec
+
+# macOS / Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pydantic/mypy cache
+.mypy_cache/
+.pytest_cache/
+__pypackages__/
+
+# Coverage reports
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Render/Heroku deployment files
+*.sqlite3
